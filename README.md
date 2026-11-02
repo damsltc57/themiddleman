@@ -1,27 +1,35 @@
 # themiddleman21
 
-Site vitrine de bijoux personnalisés, HTML/CSS/JavaScript. Ce dépôt est désormais la source de travail principale.
+Site vitrine de bijoux personnalisés, migré vers Next.js App Router et React. Node.js 20.9 ou supérieur.
 
-## Lancer le site
+## Développement
 
 ```sh
+npm ci
+npm run dev
+```
+
+Ouvrir http://127.0.0.1:8096/ (y compris `?hero=blender` pour l’aperçu Blender).
+
+## Production
+
+```sh
+npm run build
 npm start
 ```
 
-Ou `python3 -m http.server 8096 --bind 127.0.0.1` depuis la racine. Ouvrir http://127.0.0.1:8096/. Python 3 suffit ; les bibliothèques front-end sont incluses dans `vendor/`, aucune installation npm nécessaire.
-
 ## Structure
 
-- `index.html` : page principale.
-- `app.js` : navigation, animations GSAP, transition du hero et Lenis.
-- `central-hero.css` : styles finaux, dernière feuille de la cascade.
-- `motion-edition.js` : carrousel de photos et nom animé au scroll.
-- `jewel.js` : modèle Blender chargé dans Three.js, rotation et assemblage.
-- `assets/` : photos, polices, rendus et GLB compressé Draco.
-- `source/blender/` : scène Blender modifiable et script de reconstruction.
-- `gallery-proposals.html` : propositions de galerie conservées pour référence.
-- `DESIGN.md`, `PRODUCT.md` : direction visuelle et contexte produit.
+- `app/page.jsx` : contenu React rendu côté serveur.
+- `app/layout.jsx` : langue, métadonnées, ordre des styles et préparation de l’entrée du hero.
+- `app/site-scripts.jsx` : chargement des modules d’interaction après hydratation.
+- `public/app.js` : navigation, formulaire local, GSAP et Lenis.
+- `public/central-hero.css` : dernière feuille de styles du site.
+- `public/motion-edition.js` : animations éditoriales et galerie.
+- `public/jewel.js` : vue Three.js, chargée à l’approche de la section.
+- `public/assets/`, `public/vendor/` : médias et bibliothèques auto-hébergées.
+- `source/blender/` : sources Blender.
+- `source/legacy/index.html` : sauvegarde HTML avant migration, non servie par Next.js.
+- `public/gallery-proposals.html` : anciennes études visuelles accessibles à leur URL.
 
-Le hero utilise l’image détourée approuvée. La galerie « À leur image. » utilise les photographies réelles fournies. La vue 3D est une interprétation depuis une photo ; dimensions et dos ne sont pas des données de fabrication. Le formulaire prépare un brief local, sans envoi serveur.
-
-L’ancien dossier `outputs/sur-mesure-cinema` est une archive et ne doit plus recevoir les modifications.
+Les interactions DOM existantes restent dans des modules navigateur afin de conserver les animations. Le contenu est désormais modifié dans les composants React ; ne pas modifier l’archive HTML. Aucune API de formulaire : le brief reste local au navigateur.

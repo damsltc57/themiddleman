@@ -131,3 +131,98 @@ html.lenis{scroll-behavior:auto!important}
  .network-gallery .story-title{padding-top:0;margin-bottom:32px}
 }
 @media(prefers-reduced-motion:reduce){.network-gallery{padding-bottom:220px}}
+
+/* Transparent navigation returns on upward scroll. */
+.header{position:fixed;transition:transform .45s cubic-bezier(.16,1,.3,1),opacity .35s ease,background-color .3s ease;transform:none;opacity:1}
+.header.is-scrolled{background:transparent}
+.header.is-scroll-hidden{transform:translateY(-110%);opacity:0;pointer-events:none}
+.header:has(:focus-visible),.menu-open .header{transform:none;opacity:1;pointer-events:auto}
+@media(prefers-reduced-motion:reduce){.header{transition:none}}
+
+/* Campaign footer — open composition, warm studio light, central jewelry image. */
+.campaign-footer{position:relative;background:#090807;color:#eee8db;isolation:isolate}
+.campaign-stage{position:relative;min-height:820px;overflow:hidden;padding:64px max(5vw,24px) 0;background:radial-gradient(ellipse at 50% 115%,#72503a 0%,#3d291e 28%,#1b1410 52%,#090807 78%)}
+.campaign-top,.campaign-navigation{position:relative;z-index:3;display:flex;justify-content:space-between;gap:48px}
+.campaign-logo{display:inline-block;font:32px/1 var(--serif);letter-spacing:-.045em;text-decoration:none}
+.campaign-invitation{margin:22px 0 0;font:27px/1.2 var(--serif);letter-spacing:-.025em}
+.campaign-description{width:290px;margin:0;font-size:13px;line-height:1.7;color:#c8bfb1}
+.campaign-navigation{margin-top:50px}
+.campaign-nav-pair{display:flex;gap:55px;min-width:290px}
+.campaign-navigation nav{display:flex;flex-direction:column;align-items:flex-start;gap:12px}
+.campaign-navigation h3{font:12px/1.4 var(--sans,Arial,sans-serif);color:#a99a87;margin:0 0 8px;font-weight:400}
+.campaign-navigation a,.campaign-navigation button{font-size:13px;line-height:1.6;text-decoration:none;color:#eee8db;background:none;border:0;padding:0;text-align:left;cursor:pointer}
+.campaign-navigation a:hover,.campaign-navigation button:hover{color:#d6af73}
+.campaign-footer a:focus-visible,.campaign-footer button:focus-visible{outline:1px solid #e4c590;outline-offset:6px}
+.campaign-hand{position:absolute;z-index:2;bottom:-5px;left:50%;transform:translateX(-50%);width:400px;height:600px;object-fit:contain;pointer-events:none;mask-image:linear-gradient(to bottom,transparent 0%,#000 5%,#000 100%)}
+.campaign-wordmark{position:absolute;z-index:1;left:50%;bottom:24px;translate:-50% 0;white-space:nowrap;font:16.4vw/.9 var(--serif);letter-spacing:-.065em;color:#b28a68;opacity:.17;pointer-events:none}
+.campaign-colophon{display:flex;justify-content:space-between;gap:20px;padding:23px max(5vw,24px);font-size:11px;color:#b3a18d;background:#251a13;border-top:1px solid #6b4c3438}
+.campaign-colophon a{color:inherit;text-decoration:none}
+@media(max-width:767px){.campaign-stage{min-height:1030px;padding-top:48px}.campaign-top{display:block}.campaign-logo{font-size:30px}.campaign-invitation{font-size:28px;margin-top:18px}.campaign-description{margin-top:25px;width:min(100%,330px);font-size:12px}.campaign-navigation{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-top:32px}.campaign-nav-pair{min-width:0;display:flex;flex-direction:column;gap:25px}.campaign-navigation nav{gap:8px}.campaign-hand{height:500px;width:334px}.campaign-wordmark{font-size:23vw;bottom:35px}.campaign-colophon{font-size:10px;flex-wrap:wrap}.campaign-colophon span:nth-child(2){display:none}}
+
+/* Basketball campaign cutout replaces the hand. */
+.campaign-jewel{position:absolute;z-index:2;bottom:-2px;left:50%;transform:translateX(-50%);width:min(76vw,1000px);height:auto;max-width:none;pointer-events:none}
+@media(min-width:768px) and (max-width:1000px){.campaign-stage{min-height:850px}.campaign-nav-pair{gap:24px;min-width:0}.campaign-description{width:260px}.campaign-jewel{width:850px}}
+@media(max-width:767px){.campaign-stage{min-height:940px}.campaign-jewel{width:150vw;max-width:680px}.campaign-wordmark{bottom:220px;font-size:22vw}}
+
+/* Smaller spherical basketball, preserving its square aspect ratio. */
+.campaign-jewel{width:min(54vw,600px);height:auto;bottom:-80px}
+@media(min-width:768px) and (max-width:1000px){.campaign-jewel{width:560px;bottom:-60px}}
+@media(max-width:767px){.campaign-jewel{width:min(100vw,420px);max-width:none;bottom:-35px}.campaign-wordmark{bottom:160px}}
+
+/* Only the upper 40% of the sphere emerges from the footer. */
+.campaign-stage{min-height:700px}
+.campaign-jewel{--ball-size:min(44vw,520px);width:var(--ball-size);height:auto;bottom:calc(var(--ball-size) * -.59)}
+@media(max-width:767px){.campaign-stage{min-height:820px}.campaign-jewel{--ball-size:min(90vw,350px)}.campaign-wordmark{bottom:145px}}
+
+/* Jersey campaign: preserve the entire necklace and folded fabric. */
+.campaign-jewel{width:min(62vw,760px);bottom:-20px;height:auto}
+.campaign-stage{min-height:780px}
+@media(max-width:767px){.campaign-stage{min-height:820px}.campaign-jewel{width:min(100vw,460px);bottom:0}.campaign-wordmark{bottom:220px}}
+
+/* Wooden bench retained with the reference-inspired fine pavé necklace. */
+.campaign-jewel{width:min(70vw,900px);bottom:0}
+@media(max-width:767px){.campaign-jewel{width:100vw;bottom:0}.campaign-wordmark{bottom:185px}}
+
+/* Edge-to-edge bench, partially below the viewport edge. */
+.campaign-jewel{width:100%;max-width:none;bottom:clamp(-65px,-3.5vw,-24px)}
+.campaign-stage{min-height:max(780px,calc(350px + 30vw))}
+@media(max-width:767px){.campaign-stage{min-height:820px}.campaign-jewel{width:170%;bottom:-22px}.campaign-wordmark{bottom:185px}}
+
+/* Lift the footer signature above the bench. */
+.campaign-wordmark{bottom:110px}
+@media(max-width:767px){.campaign-wordmark{bottom:235px}}
+
+/* Raise the footer signature behind the composition. */
+.campaign-wordmark{display:block;bottom:200px}
+@media(max-width:767px){.campaign-wordmark{bottom:300px}}
+
+/* Keep the footer signature available but hidden. */
+.campaign-wordmark{display:none}
+
+/* Creation story — editorial photography and a quiet, natural scroll. */
+.creation-journey{background:#110e0c;color:#eee8db;padding:110px max(5vw,24px) 120px}
+.journey-heading{margin-bottom:70px}.journey-heading>span{font-size:10px;letter-spacing:.18em;color:#bda680}.journey-heading h2{font:400 clamp(56px,6.5vw,94px)/1.02 var(--serif);letter-spacing:-.035em;margin:24px 0 0}.journey-heading em{font-weight:400}
+.journey-layout{display:grid;grid-template-columns:1.15fr 1fr;gap:10vw;align-items:start}
+.journey-visual{position:sticky;top:110px;height:min(65vh,660px)}
+.journey-frame{position:absolute;inset:0;margin:0;opacity:0;visibility:hidden;transition:opacity .75s ease,visibility .75s;pointer-events:none}.journey-frame.is-active{opacity:1;visibility:visible}.journey-frame img{width:100%;height:calc(100% - 30px);object-fit:cover}.journey-frame:first-child img{object-position:center}.journey-frame:last-child img{object-position:50% 30%}
+.creation-journey figcaption{font-size:10px;line-height:1.5;color:#a89a89;margin-top:12px}
+.journey-step{min-height:48vh;padding:55px 0 70px}.journey-number{font-size:12px;color:#bda680;letter-spacing:.12em}.journey-step h3{font:400 clamp(36px,3.6vw,54px)/1.1 var(--serif);letter-spacing:-.025em;margin:24px 0}.journey-step p{font-size:15px;line-height:1.9;color:#bbb3a5;max-width:340px}.journey-mobile{display:none}.journey-steps>.text-link{margin-top:15px}
+@media(max-width:767px){.creation-journey{padding:72px 24px 80px}.journey-heading{margin-bottom:44px}.journey-heading h2{font-size:58px}.journey-layout{display:block}.journey-visual{display:none}.journey-step{min-height:0;padding:0 0 56px}.journey-step h3{margin:15px 0}.journey-mobile{display:block;margin:28px 0 0}.journey-mobile img{display:block;width:100%;height:360px;object-fit:cover;object-position:center 30%}}
+@media(prefers-reduced-motion:reduce){.journey-frame{transition:none}}
+
+/* Founder comparison: three deliberately distinct editorial directions. */
+.founder-compare{display:flex;gap:28px;align-items:center;flex-wrap:wrap;padding:30px 5vw;background:#211a15;color:#d3c4b0;font-size:11px}.founder-compare span{margin-right:auto;letter-spacing:.12em}.founder-compare a{text-decoration:none;color:inherit;padding:8px 0}
+.founder-option{position:relative;overflow:hidden;padding:70px 5vw 100px;color:#eee8db;scroll-margin-top:50px}.founder-label{font-size:10px;letter-spacing:.16em;color:#ac9780;position:relative;z-index:4}.founder-option h2,.founder-option h3{font-family:var(--serif);font-weight:400;letter-spacing:-.035em}.founder-option em{font-weight:400;color:#bda680}.founder-option figure{margin:0}.founder-option img{width:100%;height:100%;object-fit:cover;display:block}.founder-option figcaption{font-size:10px;letter-spacing:.05em;color:#ae9d8a;margin-top:14px}.founder-copy>span,.duo-heading>span,.story-manifesto>span{font-size:10px;letter-spacing:.15em;color:#bda680}.founder-copy h3{font-size:42px;line-height:1.08;margin:24px 0}.founder-copy p{font-size:14px;line-height:1.9;color:#b9ae9e}.founder-option small{display:block;font-size:10px;line-height:1.7;color:#9f9282}.founder-option a{color:#eee8db;text-decoration:none;border-bottom:1px solid #8f785a;padding-bottom:8px;display:inline-block;font-size:12px;margin-top:30px}.founder-option a:focus-visible,.founder-compare a:focus-visible{outline:1px solid #bda680;outline-offset:6px}
+.founder-signature{background:#191410;min-height:950px}.founder-signature h2{position:relative;z-index:3;font-size:clamp(78px,11vw,170px);line-height:.88;margin:100px 0 0;pointer-events:none}.signature-photo{position:absolute;top:130px;left:36%;width:33%;height:730px;opacity:.85}.signature-photo img{object-position:85% center;filter:saturate(.55);mask-image:linear-gradient(to bottom,#000 75%,transparent)}.signature-note{position:relative;z-index:3;margin:70px 0 0 auto;width:23%;max-width:300px}.signature-foot{position:absolute;bottom:65px;left:5vw;font-size:10px;letter-spacing:.2em;color:#998774}
+.founder-duo{background:#0c0b09}.duo-heading{margin:70px 0 65px 26%}.duo-heading h2{font-size:clamp(52px,6vw,90px);line-height:1.06;margin:22px 0}.duo-grid{display:grid;grid-template-columns:1.12fr 1fr;gap:9vw}.duo-tall{height:760px}.duo-right{padding-top:130px}.duo-right figure{height:360px}.duo-right .founder-copy{max-width:370px;margin-top:65px}.duo-tall img{object-position:70% center}.duo-right img{object-position:center 38%}
+.founder-story{background:#201810;min-height:1020px}.story-portrait{width:116px;height:144px;margin:70px auto 45px;overflow:hidden}.story-portrait img{object-position:90% 25%;transform:scale(1.2)}.story-manifesto{text-align:center;position:relative;z-index:2;max-width:700px;margin:0 auto}.story-manifesto h2{font-size:clamp(50px,5.6vw,82px);line-height:1.12;margin:30px 0}.story-manifesto h2>span{display:block}.story-manifesto p{max-width:410px;margin:30px auto 18px;font-size:14px;line-height:1.9;color:#b9ae9e}.story-memory{position:absolute;width:17%;max-width:230px;height:300px}.memory-left{left:3%;top:320px;transform:rotate(-5deg)}.memory-right{right:3%;top:590px;transform:rotate(5deg)}
+@media(max-width:767px){.founder-compare{gap:12px 22px;padding:25px 24px}.founder-compare span{width:100%}.founder-option{padding:48px 24px 70px}.founder-label{font-size:9px}.founder-signature{min-height:1060px}.founder-signature h2{font-size:80px;margin-top:60px}.signature-photo{left:24%;top:180px;width:70%;height:480px}.signature-note{margin-top:350px;width:100%;max-width:300px}.signature-foot{display:none}.founder-copy h3{font-size:36px}.duo-heading{margin:55px 0 40px}.duo-heading h2{font-size:49px}.duo-grid{display:block}.duo-tall{height:450px}.duo-right{padding:65px 0 0 38px}.duo-right figure{height:300px}.duo-right .founder-copy{margin-top:40px}.founder-story{min-height:1100px}.story-portrait{margin-top:55px}.story-manifesto h2{font-size:46px}.story-manifesto p{font-size:13px}.story-memory{top:auto;bottom:65px;width:36%;height:200px}.memory-left{left:8%}.memory-right{right:8%;bottom:40px}.story-manifesto{padding-bottom:260px}}
+
+/* Portrait retenu : composition 02 sur ordinateur, composition 01 sur mobile. */
+.founder-mobile{display:none}
+@media(max-width:767px){
+ .founder-desktop{display:none}
+ .founder-mobile{display:block}
+ .founder-mobile h2{margin-top:76px}
+ .founder-mobile .signature-note{margin-top:350px}
+}

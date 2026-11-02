@@ -1,3 +1,4 @@
+import { initBlenderPreview } from './hero-blender-preview.js';
 import Lenis from './vendor/lenis/lenis.mjs';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
@@ -7,6 +8,9 @@ const $=(s,root=document)=>root.querySelector(s);
 const $$=(s,root=document)=>[...root.querySelectorAll(s)];
 const reduced=matchMedia('(prefers-reduced-motion: reduce)');
 const runtime=window.__premium={jewelLoaded:false,jewelError:null,animations:[],brief:null};
+
+const blenderPreview=initBlenderPreview($('.hero-necklace'),reduced);
+runtime.blenderPreview=blenderPreview;
 
 // Light inertia: a higher lerp settles quickly, without slowing scroll distance.
 const smoothContext=gsap.matchMedia();
@@ -41,7 +45,7 @@ function closeMenu(destination=null){
  .to(nav,{clipPath:'inset(0 0 100% 0)',duration:.5,ease:'power3.inOut'},.1);
 }
 function openMenu(){
- menuMotion?.kill();menuOpen=true;nav.inert=false;setBackgroundInert(true);
+ showHeader();menuMotion?.kill();menuOpen=true;nav.inert=false;setBackgroundInert(true);
  document.documentElement.classList.add('menu-open');nav.classList.add('is-open');runtime.lenis?.stop();
  menu.setAttribute('aria-expanded','true');menu.setAttribute('aria-label','Fermer le menu');
  gsap.set(nav,{clipPath:'inset(0 0 0% 0)'});
@@ -62,6 +66,29 @@ document.addEventListener('keydown',event=>{
  }
 });
 reduced.addEventListener('change',()=>{if(menuOpen)openMenu();});
+
+// Direction-aware header, with a small threshold to ignore trackpad jitter.
+const header=$('.header');
+let previousHeaderY=Math.max(0,scrollY),headerTravel=0,headerDirection=0;
+function showHeader(){header.classList.remove('is-scroll-hidden');}
+function updateHeader(){
+ const y=Math.max(0,Math.min(scrollY,document.documentElement.scrollHeight-innerHeight));
+ const delta=y-previousHeaderY;previousHeaderY=y;
+ header.classList.toggle('is-scrolled',y>40);
+ if(menuOpen||document.documentElement.classList.contains('menu-open')||y<40){showHeader();headerTravel=0;return;}
+ if(Math.abs(delta)<.5)return;
+ const direction=Math.sign(delta);
+ if(direction!==headerDirection){headerTravel=0;headerDirection=direction;}
+ headerTravel+=Math.abs(delta);
+ if(headerTravel> (direction<0?10:24)){
+  const keyboardFocus=header.contains(document.activeElement)&&document.activeElement.matches(':focus-visible');
+  header.classList.toggle('is-scroll-hidden',direction>0&&!keyboardFocus);
+ }
+}
+header.addEventListener('focusin',showHeader);
+window.addEventListener('scroll',updateHeader,{passive:true});
+window.addEventListener('pageshow',()=>{previousHeaderY=Math.max(0,scrollY);updateHeader();});
+updateHeader();
 
 // Les seules fenêtres modales servent à agrandir une photo ou consulter la confidentialité.
 function openDialog(id){const d=$(id);d.showModal();}
@@ -132,11 +159,12 @@ motionContext.add('(prefers-reduced-motion: no-preference)',()=>{
  const passage=$('.hero-passage'),copy=$('.hero-copy'),statement=$('.hero-statement');
  passage.classList.add('is-animated');
  const sequence=gsap.timeline({scrollTrigger:{trigger:passage,start:'top top',end:()=>'+='+Math.round(innerHeight*1.85),pin:true,scrub:1,invalidateOnRefresh:true,refreshPriority:10,onUpdate:self=>{copy.inert=self.progress>.18;}}});
+ const revealAt=blenderPreview ? .78 : 0;
+ if(blenderPreview)sequence.to(blenderPreview,{progress:1,duration:.9,ease:'none',onUpdate:blenderPreview.draw},0);
  sequence.fromTo(copy,{autoAlpha:1,y:0},{autoAlpha:0,y:-12,duration:.44,ease:'none',immediateRender:false},0)
- .to('.hero-art',{opacity:.12,scale:1.045,duration:.65,ease:'power1.inOut'},.08)
- .fromTo(statement,{autoAlpha:0,y:90},{autoAlpha:1,y:0,duration:.62,ease:'power2.out'},.57)
+ .to('.hero-art',{opacity:.12,scale:1.045,duration:.65,ease:'power1.inOut'},.08+revealAt)
+ .fromTo(statement,{autoAlpha:0,y:90},{autoAlpha:1,y:0,duration:.62,ease:'power2.out'},.57+revealAt)
  .to({}, {duration:.28});
- gsap.to('.header',{autoAlpha:0,y:-16,ease:'none',scrollTrigger:{start:0,end:120,scrub:.3}});
  runtime.heroPassage=sequence;
  return ()=>{passage.classList.remove('is-animated');copy.inert=false;};
 });
@@ -147,4 +175,4 @@ motionContext.add('(prefers-reduced-motion: no-preference)',()=>{
 let jewelStarted=false;
 const lazy=new IntersectionObserver(entries=>{if(entries.some(e=>e.isIntersecting)&&!jewelStarted){jewelStarted=true;lazy.disconnect();import('./jewel.js').then(m=>m.initJewel({gsap,ScrollTrigger,reduced,runtime})).catch(e=>{runtime.jewelError=e.message;$('#jewel-status').textContent='Vue photographique';});}},{rootMargin:'600px'});
 lazy.observe($('#volume'));
-window.addEventListener('pagehide',e=>{if(!e.persisted){smoothContext.revert();motionContext.revert();lazy.disconnect();runtime.disposeJewel?.();}});
+window.addEventListener('pagehide',e=>{if(!e.persisted){smoothContext.revert();motionContext.revert();lazy.disconnect();runtime.disposeJewel?.();blenderPreview?.dispose();}});

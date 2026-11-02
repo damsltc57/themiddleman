@@ -132,6 +132,6 @@ bpy.ops.object.select_all(action='DESELECT')
 for o in s.objects:
  if o==root or o.parent in [root,bodies,pave,bail,chain]:o.select_set(True)
 bpy.context.view_layer.objects.active=root
-bpy.ops.export_scene.gltf(filepath=str(OUT/'assets/necklace-93-blender.glb'),export_format='GLB',use_selection=True,use_active_scene=True,export_yup=False,export_apply=True,export_draco_mesh_compression_enable=True,export_draco_mesh_compression_level=6)
+bpy.ops.export_scene.gltf(filepath=str(OUT/'public/assets/necklace-93-blender.glb'),export_format='GLB',use_selection=True,use_active_scene=True,export_yup=False,export_apply=True,export_draco_mesh_compression_enable=True,export_draco_mesh_compression_level=6)
 bpy.ops.wm.save_as_mainfile(filepath=str(OUT/'source/blender/themiddleman21-93.blend'))
-result={'stones':count+30,'objects':len(s.objects),'blend':str(OUT/'source/blender/themiddleman21-93.blend'),'glb':str(OUT/'assets/necklace-93-blender.glb')}
+result={'stones':count+30,'objects':len(s.objects),'blend':str(OUT/'source/blender/themiddleman21-93.blend'),'glb':str(OUT/'public/assets/necklace-93-blender.glb')}

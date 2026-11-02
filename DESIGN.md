@@ -217,3 +217,47 @@ Fondu du hero allongé après retour utilisateur : interpolation linéaire, éta
 Composition de la deuxième proposition générée, reconstruite avec les cinq photographies originales fournies. Fond brun uni #110e0c de la proposition codée. Portrait, détail plus petit et abaissé, grand portrait, rencontre et photo à deux. Titre seul en haut à gauche ; aucune ligne supérieure ni texte à droite. Wordmark géant italique #30251d en arrière-plan, défilant plus lentement que les images via la même timeline ScrollTrigger. Carousel piloté au scroll sur ordinateur et mobile ; défilement horizontal natif en mouvement réduit. Photos agrandissables dans la fenêtre existante. Vérifié en 1440 et 390 px.
 
 Espacement vertical de la galerie affiné avec Impeccable : 64–88 px en haut sur ordinateur, 56 px sur mobile, 48 px en bas. Titre séparé des photos par 40 px (32 px mobile). Signature relevée pour laisser respirer la limite inférieure. Carousel et agrandissement photo vérifiés en 1440 et 390 px.
+
+### Header selon le sens de défilement
+Header fixe : masqué vers le bas après 24 px de mouvement, réaffiché vers le haut après 10 px. Translation et fondu CSS, fond transparent à toutes les positions, conformément au choix utilisateur. Toujours visible en haut, pendant le menu et au focus clavier. Remplace l’ancien fondu dépendant uniquement des 120 premiers pixels. Mouvement réduit sans transition.
+
+
+### Étude Blender du hero — 93 V2
+L’aperçu `?hero=blender` utilise 32 rendus WebP transparents issus de `source/blender/themiddleman21-93-hero-v2.blend`. La torsade suit un U arrondi, la face avant de la bélière pivote, le pendentif descend de 0,42 unité. La séquence est liée au passage GSAP et se referme en remontant. En mouvement réduit, seule la pose fermée apparaît. Le hero approuvé reste la version par défaut : le pavage et les reflets de cette reconstruction artistique ne reproduisent pas exactement l’image de campagne.
+
+
+### Affinement de l’or et des maillons
+Après comparaisons successives avec l’image de campagne et revue visuelle indépendante, les torsades fines ont été remplacées par des rubans pavés à grandes boucles, avec un U élargi, des fils d’or visibles dans les ouvertures et des griffes dorées. Les pierres du pendentif ont des tailles variées et des accents princess en montures épaisses. Le shader du fond est microserti pour éviter une grande surface plane réfléchissante entre les pierres. La séquence passe à 896 × 1344, Cycles 96 échantillons ; les mêmes poses et le même comportement au scroll sont conservés. Voir `source/blender/HERO.md` pour reconstruire et rendre.
+
+
+### Chaîne à maillons individuels
+La torsade continue est remplacée par des anneaux ovales fermés, chacun modélisé séparément. Les plans alternent pour former une chaîne entrelacée ; l’espacement suit la longueur de la courbe en U, les ouvertures restent visibles et le pavage couvre le dessus des anneaux. La teinte et l’animation du pendentif sont conservées.
+
+
+### Torsade de maillons
+Les anneaux individuels tournent progressivement autour de l’axe local de la courbe en U. Chaque anneau fermé est aussi légèrement déformé en torsion ; leur espacement est resserré pour obtenir une chaîne cordée de maillons imbriqués. Cette construction remplace l’alternance de plans de la version précédente.
+
+### Footer de campagne
+Composition inspirée de la référence fournie : signature et invitation à gauche, présentation à droite, deux groupes de liens, main tenant le 93 au centre et grand nom discret en arrière-plan. Fond radial noir vers brun chaud. Image de campagne générée avec transparence réelle, optimisée en WebP (environ 218 Ko). Mobile : liens en deux colonnes et visuel sous le contenu. Le bouton de confidentialité conserve son dialogue existant.
+
+
+### Footer basket
+Le visuel de main est remplacé par le ballon de basket portant le collier 93, détouré avec canal alpha. Le bijou reprend la chaîne fine pavée, la bélière rectangulaire et les motifs du pendentif de la photographie client. WebP optimisé, composition ancrée en bas du footer, sur le dégradé CSS noir-brun.
+
+Le ballon du footer utilise désormais un détouré sphérique au format carré, affiché à 600 px maximum sur ordinateur et à la largeur du viewport sur mobile. Le cadrage inférieur masque seulement une petite partie du ballon.
+
+Le cadrage du ballon montre uniquement les 40 % supérieurs de sa hauteur, avec un diamètre maximal de 520 px (350 px sur mobile). Le pendentif est remonté sur le dôme pour rester intégralement visible. Source transparente footer-basket-dome.png, affichage WebP.
+
+Variante footer active : maillot sombre, collier doré 93 et ballon, détourés à partir de la référence fournie. Asset footer-jersey-93.webp avec alpha, composition complète de 760 px maximum et cadrage mobile adapté. Le précédent ballon seul est conservé dans les assets pour comparaison.
+
+Footer : banc en bois conservé dans footer-bench-93.webp ; chaîne affinée et torsadée, pavage plus dense, motifs et teinte champagne rapprochés de la photographie du véritable bijou. Composition générée, transparence autour des objets ; versions précédentes conservées.
+
+Le banc est prolongé horizontalement dans footer-bench-wide.webp (2172 × 724), affiché bord à bord et abaissé pour masquer une partie de sa tranche sous le footer. Les objets gardent une taille modérée au centre ; sur mobile, recadrage latéral du bois.
+
+Section « De l’idée à la pièce » : remplace l’ancien accordéon et suit immédiatement À leur image. Référence éditoriale The Vessel (via Subframe), révélation douce inspirée de Poem Scroll. Visuel sticky à gauche, trois étapes à droite ; changement photographique par fondu, apparition légère des paragraphes. Mobile : image propre à chaque étape dans le flux. Mouvement réduit : aucun fondu ni translation.
+
+### Portrait — sélection responsive
+La proposition codée 02 (deux photographies décalées) est retenue dès 768 px ; sous 768 px, la proposition codée 01 conserve son grand titre superposé au portrait et son texte en dessous. Le sélecteur de comparaison et la proposition 03 sont retirés. Une seule composition est affichée et accessible à chaque largeur ; les animations GSAP sont recréées au changement de breakpoint et désactivées en mouvement réduit. Les photographies originales et les textes provisoires sont conservés.
+
+### Migration Next.js
+La page active est désormais app/page.jsx ; app/layout.jsx conserve les métadonnées, la préparation du hero et l’ordre des feuilles. Les chemins de styles, scripts, vendor et assets mentionnés ci-dessus sont désormais préfixés par public/ dans le dépôt (URLs publiques inchangées). Les modules DOM sont chargés après hydratation par app/site-scripts.jsx. L’ancien HTML est archivé sous source/legacy/index.html.

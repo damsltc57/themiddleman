@@ -261,3 +261,13 @@ La proposition codée 02 (deux photographies décalées) est retenue dès 768 px
 
 ### Migration Next.js
 La page active est désormais app/page.jsx ; app/layout.jsx conserve les métadonnées, la préparation du hero et l’ordre des feuilles. Les chemins de styles, scripts, vendor et assets mentionnés ci-dessus sont désormais préfixés par public/ dans le dépôt (URLs publiques inchangées). Les modules DOM sont chargés après hydratation par app/site-scripts.jsx. L’ancien HTML est archivé sous source/legacy/index.html.
+
+### Votre inspiration — remplacement de la section volume
+Section React app/personal-piece.jsx : photographie à gauche et choix Un chiffre / Des initiales / Un symbole à droite. Ouverture de cinq bandes photographiques au scroll normal, sans pin ; ouverture unique simplifiée sur mobile, immédiate en mouvement réduit. Inspiration Scroll Window de Subframe. Photo réelle du 93, études générées pour AM et étoile clairement légendées. Le CTA transmet le choix au formulaire sans effacer la saisie. La scène Three.js de cette section n’est plus initialisée ; l’aperçu Blender du hero reste indépendant.
+
+### Inspiration immersive — direction retenue
+Le bloc de choix est remplacé par une scène photographique pleine hauteur : cinq fenêtres s’élargissent avec le scroll global et deviennent une image complète, puis le message et son CTA apparaissent. Section sticky native, progression réversible, 290svh sur ordinateur et 230svh sur mobile ; repli statique en mouvement réduit. Photographie de campagne générée depuis le 93 original, légendée comme illustrative. Le lien mène directement au formulaire sans préremplissage. Aucun scroll interne ni nouvelle scène 3D.
+
+
+### Contact — invitation retenue
+La proposition 1 est retenue : « Votre histoire. Une pièce à part. », centrée sans image après la section immersive. Paragraphe court et un seul bouton WhatsApp ivoire. Entrée progressive titre, paragraphe et bouton ; mouvement réduit respecté. Les variantes 2/3, repères et navigation de comparaison sont retirés. Cette section remplace le formulaire et la préparation de brief décrits plus haut. Le numéro WhatsApp reste à confirmer ; le bouton affiche pour l’instant une information locale, sans envoi.

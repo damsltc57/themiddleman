@@ -104,42 +104,6 @@ $$('dialog').forEach(dialog=>{
   dialog.addEventListener('click',e=>{if(e.target===dialog){const r=dialog.getBoundingClientRect();if(e.clientX<r.left||e.clientX>r.right||e.clientY<r.top||e.clientY>r.bottom)dialog.close();}});
 });
 
-const materialTabs=$$('[role=tab]');
-function selectTab(tab,focus=false){
-  materialTabs.forEach(t=>{const active=t===tab;t.setAttribute('aria-selected',String(active));t.tabIndex=active?0:-1;$('#'+t.getAttribute('aria-controls')).hidden=!active;});
-  document.querySelector('#matieres').dataset.material=tab.id==='tab-pierres'?'pierres':'metaux';
-  if(focus)tab.focus();
-}
-materialTabs.forEach((tab,i)=>{
-  tab.addEventListener('click',()=>selectTab(tab));
-  tab.addEventListener('keydown',e=>{let target;if(e.key==='ArrowRight')target=materialTabs[(i+1)%materialTabs.length];if(e.key==='ArrowLeft')target=materialTabs[(i+materialTabs.length-1)%materialTabs.length];if(e.key==='Home')target=materialTabs[0];if(e.key==='End')target=materialTabs.at(-1);if(target){e.preventDefault();selectTab(target,true);}});
-});
-
-// Le formulaire prépare un brief local : aucun faux envoi, aucune collecte.
-const form=$('#project-form');form.noValidate=true;
-let budget='À définir ensemble',brief='';
-function invalidateBrief(){$('#brief-result').hidden=true;runtime.brief=null;brief='';}
-$$('[data-budget]').forEach(b=>b.addEventListener('click',()=>{budget=b.dataset.budget;invalidateBrief();$$('[data-budget]').forEach(o=>{o.classList.toggle('active',o===b);o.setAttribute('aria-pressed',String(o===b));});}));
-$('#jewel-type').addEventListener('change',invalidateBrief);
-function fieldError(id,message){const input=$('#'+id);$('#'+id+'-error').textContent=message;input.setAttribute('aria-invalid',String(!!message));}
-['name','idea'].forEach(id=>$('#'+id).addEventListener('input',()=>{if($('#'+id).getAttribute('aria-invalid')==='true')fieldError(id,'');invalidateBrief();}));
-form.addEventListener('submit',e=>{
-  e.preventDefault();const name=$('#name').value.trim(),idea=$('#idea').value.trim();
-  fieldError('name',name?'':'Indiquez votre prénom pour personnaliser le brief.');
-  fieldError('idea',idea.length>=10?'':'Décrivez votre idée en quelques mots (10 caractères minimum).');
-  if(!name||idea.length<10){$('[aria-invalid=true]',form)?.focus();return;}
-  brief=`MON PROJET DE BIJOU\n\nPrénom : ${name}\nPièce envisagée : ${$('#jewel-type').value}\nBudget envisagé : ${budget}\n\nMon idée\n${idea}\n\nÀ préciser ensemble\nForme, dimensions, métal, pierres, faisabilité, budget et modalités de réalisation.`;
-  runtime.brief=brief;$('#brief-text').textContent=brief;$('#brief-result').hidden=false;$('#brief-status').textContent='Prêt à copier ou à enregistrer. Aucun message n’a été envoyé.';
-  $('#brief-result').scrollIntoView({behavior:reduced.matches?'instant':'smooth',block:'nearest'});
-});
-$('#copy-brief').addEventListener('click',async()=>{
-  try{await navigator.clipboard.writeText(brief);$('#brief-status').textContent='Brief copié. Vous pouvez le coller dans votre message.';}
-  catch{$('#brief-status').textContent='La copie automatique est indisponible. Sélectionnez le texte ci-dessus pour le copier.';$('#brief-text').focus();}
-});
-$('#save-brief').addEventListener('click',()=>{
-  const url=URL.createObjectURL(new Blob([brief],{type:'text/plain;charset=utf-8'}));const a=document.createElement('a');a.href=url;a.download='mon-projet-de-bijou.txt';a.click();setTimeout(()=>URL.revokeObjectURL(url),1000);$('#brief-status').textContent='Votre brief a été téléchargé.';
-});
-
 const processAssets=[['./assets/esquisse.jpg','Étude illustrative : esquisse du pendentif 93.','Étude illustrative · Le dessin'],['./assets/matieres-macro.jpg','Étude illustrative de pierres et nuances de métal.','Étude illustrative · Les matières'],['./assets/hero-cinema.jpg','Mise en scène de campagne du pendentif 93.','Mise en scène · La pièce']];
 $$('.process-step').forEach(button=>button.addEventListener('click',()=>{const index=Number(button.dataset.process);$$('.process-step').forEach(b=>{const active=b===button;b.setAttribute('aria-expanded',String(active));$('#'+b.getAttribute('aria-controls')).hidden=!active;$('.process-sign',b).textContent=active?'−':'+';});const im=$('#process-image');im.src=processAssets[index][0];im.alt=processAssets[index][1];$('#process-caption').textContent=processAssets[index][2];if(!reduced.matches)gsap.fromTo(im,{clipPath:'inset(0 100% 0 0)',scale:1.06},{clipPath:'inset(0 0% 0 0)',scale:1,duration:1.1,ease:'expo.out',overwrite:true});}));
 const motionContext=gsap.matchMedia();
@@ -171,8 +135,4 @@ motionContext.add('(prefers-reduced-motion: no-preference)',()=>{
 
  import('./motion-edition.js').then(m=>m.initEditorialMotion({gsap,ScrollTrigger,reduced,runtime}));
 
-// La scène 3D n'est chargée qu'à l'approche de la section.
-let jewelStarted=false;
-const lazy=new IntersectionObserver(entries=>{if(entries.some(e=>e.isIntersecting)&&!jewelStarted){jewelStarted=true;lazy.disconnect();import('./jewel.js').then(m=>m.initJewel({gsap,ScrollTrigger,reduced,runtime})).catch(e=>{runtime.jewelError=e.message;$('#jewel-status').textContent='Vue photographique';});}},{rootMargin:'600px'});
-lazy.observe($('#volume'));
-window.addEventListener('pagehide',e=>{if(!e.persisted){smoothContext.revert();motionContext.revert();lazy.disconnect();runtime.disposeJewel?.();blenderPreview?.dispose();}});
+window.addEventListener('pagehide',e=>{if(!e.persisted){smoothContext.revert();motionContext.revert();blenderPreview?.dispose();}});

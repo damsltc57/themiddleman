@@ -1,3 +1,5 @@
+import ContactProposals from "./contact-proposals";
+import PersonalPiece from "./personal-piece";
 import SiteScripts from "./site-scripts";
 
 export default function Home(){
@@ -11,7 +13,7 @@ export default function Home(){
 </button>
 </div>
 <nav aria-label={"Navigation principale"} className={"nav"} id={"navigation"} inert={true}><div className={"menu-links"}><a href={"#piece"}>{"Les créations"}</a>
-<a href={"#volume"}>{"Le détail"}</a>
+<a href={"#volume"}>{"Votre inspiration"}</a>
 <a href={"#sur-mesure"}>{"Le sur-mesure"}</a>
 <a href={"#projet"}>{"Votre projet"}</a>
 </div>
@@ -98,7 +100,7 @@ export default function Home(){
 <span className={"signature-foot"}>{"LE VISAGE DERRIÈRE LE PROJET"}</span>
 </section>
 <section className={"founder-option founder-duo founder-desktop"} id={"portrait-2"} aria-labelledby={"founder-title-2"}><div className={"duo-heading"}><span>{"LE TERRAIN. LE QUOTIDIEN."}</span>
-<h2 id={"founder-title-2"}>{"La même personne."}<br /><em>{"Deux regards."}</em>
+<h2 id={"founder-title-2"}>{"Derrière"}<br /><em>{"la pièce."}</em>
 </h2>
 </div>
 <div className={"duo-grid"}><figure className={"duo-tall"}><img src={"/assets/reseaux/photo-2.webp"} alt={"Rencontre sur le terrain de basket."} loading={"lazy"} /><figcaption>{"01 — Sur le terrain"}</figcaption>
@@ -113,105 +115,10 @@ export default function Home(){
 </div>
 </div>
 </section>
-<section aria-labelledby={"volume-title"} className={"volume-section"} id={"volume"}><div className={"volume-sticky"}><div className={"volume-copy"}><h2 id={"volume-title"}>{"Sous tous"}<br /><em>{"les angles."}</em>
-</h2>
-<p>{"Le dessin devient volume."}<br />{"La lumière révèle le relief."}</p>
-<div aria-live={"polite"} className={"volume-chapter"}><span className={"chapter-line"}></span>
-<p id={"chapter-text"}>{"Une pièce, sous tous les angles."}</p>
-</div>
-<p className={"volume-hint"}>{"Faites défiler pour révéler les détails."}</p>
-</div>
-<div aria-label={"Vue 3D interactive du pendentif 93. Les commandes sous le bijou permettent de le tourner et de séparer ses éléments."} className={"jewel-stage"} id={"jewel-stage"} role={"img"}><img alt={""} className={"jewel-poster"} height={"1536"} loading={"lazy"} src={"/assets/necklace-93-studio.webp"} width={"1024"} /><div className={"jewel-canvas"} id={"jewel-canvas"}></div>
-</div>
-<div className={"volume-controls"}><div aria-label={"Couleur de l’aperçu 3D"} className={"finish-control"} role={"group"}><button aria-label={"Aperçu champagne"} aria-pressed={"true"} className={"finish selected"} data-finish={"champagne"}><span></span>
-</button>
-<button aria-label={"Aperçu argenté"} aria-pressed={"false"} className={"finish silver"} data-finish={"silver"}><span></span>
-</button>
-<button aria-label={"Aperçu rosé"} aria-pressed={"false"} className={"finish rose"} data-finish={"rose"}><span></span>
-</button>
-<span className={"finish-label"}>{"Champagne"}</span>
-</div>
-<div className={"rotation-control"}><button aria-label={"Tourner le bijou vers la gauche"} id={"rotate-left"}><svg aria-hidden={"true"} viewBox={"0 0 24 24"}><path d={"m14 6-6 6 6 6"}></path>
-</svg>
-</button>
-<button aria-label={"Tourner le bijou vers la droite"} id={"rotate-right"}><svg aria-hidden={"true"} viewBox={"0 0 24 24"}><path d={"m10 6 6 6-6 6"}></path>
-</svg>
-</button>
-</div>
-<button aria-pressed={"false"} className={"text-button"} id={"toggle-explode"}>{"Séparer les éléments "}<svg aria-hidden={"true"} viewBox={"0 0 24 24"}><path d={"M8 4H4v4m12-4h4v4M4 16v4h4m12-4v4h-4"}></path>
-</svg>
-</button>
-</div>
-<div className={"volume-note"}><span>{"Interprétation 3D d’après la photographie."}</span>
-<span>{"Finitions illustratives · "}<span id={"jewel-status"} role={"status"}>{"Chargement de la pièce"}</span>
-</span>
-</div>
-</div>
-</section>
-<section aria-labelledby={"materials-title"} className={"material-scene"} data-material={"metaux"} id={"matieres"}><div className={"material-photo"}><img alt={"Étude illustrative de pierres facettées et de nuances de métal sur velours sombre."} height={"1024"} loading={"lazy"} src={"/assets/matieres-macro.jpg"} width={"1536"} /></div>
-<div className={"material-scene-heading"}><h2 id={"materials-title"}>{"Le caractère"}<br />{"de "}<em>{"la matière."}</em>
-</h2>
-<p>{"Une couleur. Un éclat. Un contraste."}<br />{"Le choix change toute la présence d’une pièce."}</p>
-</div>
-<div className={"material-panel"}><div aria-label={"Explorer les matières"} className={"material-tabs"} role={"tablist"}><button aria-controls={"panel-metaux"} aria-selected={"true"} id={"tab-metaux"} role={"tab"} tabIndex={"0"}>{"Les métaux"}</button>
-<button aria-controls={"panel-pierres"} aria-selected={"false"} id={"tab-pierres"} role={"tab"} tabIndex={"-1"}>{"Les pierres"}</button>
-</div>
-<div aria-labelledby={"tab-metaux"} id={"panel-metaux"} role={"tabpanel"}><h3>{"Chaud. Clair. Rosé."}</h3>
-<p>{"Or, or rose, or blanc, argent 925 et finitions plaquées : des possibilités à explorer selon votre projet."}</p>
-<p className={"material-note"}>{"Métal massif et placage sont distincts. Composition et disponibilité à confirmer ensemble."}</p>
-</div>
-<div aria-labelledby={"tab-pierres"} hidden={true} id={"panel-pierres"} role={"tabpanel"}><h3>{"La lumière, autrement."}</h3>
-<p>{"Diamant naturel ou de laboratoire, moissanite ou zircon : chaque option possède ses propres caractéristiques."}</p>
-<p className={"material-note"}>{"Nature, caractéristiques et disponibilité des pierres à préciser pour votre projet."}</p>
-</div>
-<a className={"text-link"} href={"#projet"}>{"Trouvons votre combinaison "}<svg aria-hidden={"true"} viewBox={"0 0 24 24"}><path d={"M4 12h15m-6-6 6 6-6 6"}></path>
-</svg>
-</a>
-</div>
-<span className={"material-credit"}>{"Étude de matières · Image illustrative"}</span>
-</section>
-<section aria-labelledby={"project-title"} className={"concierge"} id={"projet"}><div className={"project-intro"}><h2 id={"project-title"}>{"Parlons"}<br /><em>{"de vous."}</em>
-</h2>
-<p>{"Une première idée. Quelques détails."}<br />{"Préparez votre brief pour ouvrir la conversation."}</p>
-</div>
-<div className={"concierge-copy"}><form id={"project-form"}><div className={"form-pair"}><div className={"field"}><label htmlFor={"name"}>{"Votre prénom"}</label>
-<input aria-describedby={"name-error"} autoComplete={"given-name"} id={"name"} maxLength={"80"} name={"name"} placeholder={"Prénom"} required={true} /><span className={"field-error"} id={"name-error"}></span>
-</div>
-<div className={"field"}><label htmlFor={"jewel-type"}>{"Votre pièce"}</label>
-<select id={"jewel-type"} name={"piece"}><option>{"Pendentif"}</option>
-<option>{"Bague"}</option>
-<option>{"Bracelet"}</option>
-<option>{"Autre idée"}</option>
-</select>
-</div>
-</div>
-<fieldset className={"budget-field"}><legend>{"Votre budget "}<span>{"— facultatif"}</span>
-</legend>
-<div className={"budget-options"}><button aria-pressed={"true"} className={"active"} data-budget={"À définir ensemble"} type={"button"}>{"À définir"}</button>
-<button aria-pressed={"false"} data-budget={"Moins de 500 €"} type={"button"}>{"− de 500 €"}</button>
-<button aria-pressed={"false"} data-budget={"500 à 1 500 €"} type={"button"}>{"500–1 500 €"}</button>
-<button aria-pressed={"false"} data-budget={"Plus de 1 500 €"} type={"button"}>{"1 500 € et +"}</button>
-</div>
-<p className={"budget-note"}>{"Ces fourchettes servent à exprimer votre budget, sans constituer des prix de vente."}</p>
-</fieldset>
-<div className={"field"}><label htmlFor={"idea"}>{"Ce que vous imaginez"}</label>
-<textarea aria-describedby={"idea-error"} id={"idea"} maxLength={"3000"} minLength={"10"} name={"idea"} placeholder={"Un chiffre qui compte, des initiales, une inspiration…"} required={true} rows={"3"}></textarea>
-<span className={"field-error"} id={"idea-error"}></span>
-</div>
-<button className={"button button-light prepare-button"} type={"submit"}>{"Préparer mon projet "}<svg aria-hidden={"true"} viewBox={"0 0 24 24"}><path d={"M4 12h15m-6-6 6 6-6 6"}></path>
-</svg>
-</button>
-<p className={"privacy-note"}>{"Le brief est créé dans votre navigateur. Aucune donnée n’est envoyée."}</p>
-<div className={"brief-result"} hidden={true} id={"brief-result"}><h3>{"Votre projet est prêt."}</h3>
-<pre aria-label={"Votre brief de projet"} id={"brief-text"} tabIndex={"0"}></pre>
-<div className={"brief-actions"}><button id={"copy-brief"} type={"button"}>{"Copier le brief"}</button>
-<button id={"save-brief"} type={"button"}>{"Enregistrer en .txt"}</button>
-</div>
-<p id={"brief-status"} role={"status"}></p>
-</div>
-</form>
-</div>
-</section>
+<PersonalPiece />
+
+
+<ContactProposals />
 <div className={"concierge-questions"} id={"questions"}><h3>{"Avant de commencer."}</h3>
 <div className={"question-list"}><details><summary>{"Et si mon idée n’est pas encore précise ?"}<svg aria-hidden={"true"} viewBox={"0 0 24 24"}><path d={"M5 12h14M12 5v14"}></path>
 </svg>
@@ -239,7 +146,7 @@ export default function Home(){
 <div className={"campaign-navigation"}><div className={"campaign-nav-pair"}><nav aria-label={"Découvrir"}><h3>{"Découvrir"}</h3>
 <a href={"#piece"}>{"Les créations"}</a>
 <a href={"#sur-mesure"}>{"Le sur-mesure"}</a>
-<a href={"#matieres"}>{"Les matières"}</a>
+
 </nav>
 <nav aria-label={"Votre projet"}><h3>{"Votre projet"}</h3>
 <a href={"#projet"}>{"Imaginer ma pièce"}</a>
@@ -267,7 +174,7 @@ export default function Home(){
 </svg>
 </button>
 <h2 id={"privacy-title"}>{"Votre projet"}<br />{"reste chez vous."}</h2>
-<p>{"Les informations du formulaire restent dans cette page. Elles ne sont ni enregistrées sur un serveur ni envoyées à un destinataire. Vous choisissez de copier ou de télécharger votre brief."}</p>
+<p>{"Cette version de présentation ne collecte aucune demande. Le contact WhatsApp sera disponible après configuration des coordonnées professionnelles."}</p>
 <p>{"Cette version n’utilise aucun outil de mesure d’audience ni cookie publicitaire."}</p>
 </dialog>
 

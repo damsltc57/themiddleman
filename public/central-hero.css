@@ -141,7 +141,7 @@ html.lenis{scroll-behavior:auto!important}
 
 /* Campaign footer — open composition, warm studio light, central jewelry image. */
 .campaign-footer{position:relative;background:#090807;color:#eee8db;isolation:isolate}
-.campaign-stage{position:relative;min-height:820px;overflow:hidden;padding:64px max(5vw,24px) 0;background:radial-gradient(ellipse at 50% 115%,#72503a 0%,#3d291e 28%,#1b1410 52%,#090807 78%)}
+.campaign-stage{position:relative;min-height:820px;overflow:hidden;padding:64px max(5vw,24px) 0;background:linear-gradient(to bottom,#090807 0%,#090807 5%,rgba(9,8,7,.94) 14%,rgba(9,8,7,.65) 28%,rgba(9,8,7,.22) 44%,rgba(9,8,7,0) 62%),radial-gradient(ellipse at 50% 115%,#72503a 0%,#3d291e 28%,#1b1410 52%,#090807 78%)}
 .campaign-top,.campaign-navigation{position:relative;z-index:3;display:flex;justify-content:space-between;gap:48px}
 .campaign-logo{display:inline-block;font:32px/1 var(--serif);letter-spacing:-.045em;text-decoration:none}
 .campaign-invitation{margin:22px 0 0;font:27px/1.2 var(--serif);letter-spacing:-.025em}
@@ -226,3 +226,39 @@ html.lenis{scroll-behavior:auto!important}
  .founder-mobile h2{margin-top:76px}
  .founder-mobile .signature-note{margin-top:350px}
 }
+
+/* A photographic scroll story. The default is a readable static campaign. */
+.inspiration-story{position:relative;background:#090807;color:#eee8db;scroll-margin-top:0}
+.inspiration-stage{position:relative;isolation:isolate;height:100svh;min-height:640px;overflow:hidden}
+.inspiration-story.is-scroll-story{height:290svh;min-height:1900px}
+.is-scroll-story .inspiration-stage{position:sticky;top:0}
+.inspiration-photo,.inspiration-window,.inspiration-veil{position:absolute;inset:0}
+.inspiration-window{will-change:clip-path}
+.inspiration-window img{width:100%;height:100%;display:block;object-fit:cover;object-position:70% center;transform-origin:73% 55%}
+.inspiration-intro{position:absolute;z-index:2;left:6vw;top:28%;max-width:48%;display:none}
+.is-scroll-story .inspiration-intro{display:block}
+.inspiration-intro p,.inspiration-message h2{font:400 clamp(48px,5.8vw,88px)/1.04 var(--serif);letter-spacing:-.025em;margin:0}
+.inspiration-intro em,.inspiration-message em{font-weight:400;color:#bda680}
+.inspiration-intro>span{display:block;font-size:12px;color:#bbb3a5;margin-top:38px}
+.inspiration-veil{background:linear-gradient(90deg,rgba(9,8,7,.86),rgba(9,8,7,.52) 40%,transparent 70%);pointer-events:none}
+.inspiration-message{position:absolute;z-index:3;left:6vw;top:50%;width:40%;max-width:580px;translate:0 -50%}
+.inspiration-message>p{font-size:15px;line-height:1.85;max-width:37ch;margin:26px 0 24px;color:#eee8db}
+.inspiration-cta{display:inline-flex;gap:36px;align-items:center;min-height:48px;border-bottom:1px solid #bda680;color:#eee8db;font-size:15px;text-decoration:none}
+.inspiration-cta svg{height:22px;width:22px;stroke:currentColor;fill:none;stroke-width:1}.inspiration-cta:hover{color:#bda680}.inspiration-cta:focus-visible{outline:2px solid #bda680;outline-offset:6px}
+.inspiration-credit{position:absolute;z-index:4;bottom:22px;right:5vw;font-size:11px;color:#eee8db;text-shadow:0 1px 4px #090807}
+@media(max-width:767px){
+ .inspiration-story.is-scroll-story{height:230svh;min-height:1500px}
+ .inspiration-stage{height:100svh;min-height:650px}
+ .inspiration-window img{object-position:75% center}
+ .inspiration-intro{left:24px;top:15%;max-width:85%}
+ .inspiration-intro p{font-size:clamp(42px,10vw,62px);text-shadow:0 2px 20px #090807}
+ .inspiration-intro>span{margin-top:25px}
+ .inspiration-veil{background:linear-gradient(to top,rgba(9,8,7,.98) 0%,rgba(9,8,7,.90) 32%,rgba(9,8,7,.35) 62%,transparent 88%)}
+ .inspiration-message{left:24px;right:24px;width:auto;top:auto;bottom:70px;translate:none}
+ .inspiration-message h2{font-size:clamp(42px,11vw,62px)}
+ .inspiration-message>p{font-size:14px;line-height:1.75;margin:20px 0 16px;max-width:33ch}
+ .inspiration-credit{left:24px;right:auto;bottom:22px;font-size:10px}
+}
+@media(prefers-reduced-motion:reduce){.inspiration-window{will-change:auto}.inspiration-story{height:auto!important;min-height:0!important}.inspiration-stage{position:relative!important}}
+/* Keep the complete pendant above the mobile reading area. */
+@media(max-width:767px){.inspiration-window img{position:absolute;top:8%;left:-75%;width:180%;max-width:none;height:auto;object-fit:contain;transform-origin:75% 50%}}

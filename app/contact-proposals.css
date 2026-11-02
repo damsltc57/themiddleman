@@ -1,0 +1,22 @@
+.contact-proposals { background:#090807; color:#eee8db; scroll-margin-top:90px; }
+.contact-study { position:relative; padding:130px max(6vw,22px) 100px; scroll-margin-top:30px; }
+.contact-study h2 { margin:0; font:400 clamp(60px,6.6vw,96px)/1.04 'Instrument Serif',Georgia,serif; letter-spacing:-.025em; }
+.contact-study h2 em { font-weight:400; color:#bda680; }
+.contact-description { font:400 15px/1.9 'Libre Caslon Text',Georgia,serif; color:#bbb3a5; }
+.contact-invitation { text-align:center; }
+.contact-invitation .contact-description { margin:30px auto 32px; }
+.contact-whatsapp { display:inline-flex; justify-content:center; align-items:center; gap:24px; min-height:54px; padding:16px 23px; background:#eee8db; border:1px solid #eee8db; color:#17130e; font:14px/1.5 'Libre Caslon Text',Georgia,serif; cursor:pointer; transition:background-color .25s,border-color .25s; }
+.contact-whatsapp:hover { background:#d0bc98; border-color:#d0bc98; }
+.contact-whatsapp svg { width:18px; height:18px; fill:none; stroke:currentColor; stroke-width:1.4; transition:transform .3s; }
+.contact-whatsapp:hover svg { transform:translate(2px,-2px); }
+.contact-whatsapp:focus-visible { outline:2px solid #bda680; outline-offset:6px; }
+.contact-status { min-height:38px; margin:12px 0 0; font:12px/1.6 'Libre Caslon Text',Georgia,serif; color:#bbb3a5; }
+@media(max-width:767px) {
+ .contact-study { padding:85px 22px 85px; }
+ .contact-study h2 { font-size:clamp(48px,12.8vw,72px); }
+ .contact-description { font-size:14px; }
+ .contact-whatsapp { font-size:13px; }
+ .contact-status { max-width:290px; }
+ .contact-invitation .contact-status { margin-inline:auto; }
+}
+@media(prefers-reduced-motion:reduce) { .contact-whatsapp,.contact-whatsapp svg { transition:none; } }

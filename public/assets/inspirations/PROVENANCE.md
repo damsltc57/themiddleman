@@ -1,0 +1,2 @@
+Initiales et symbole : images générées le 2 novembre 2026 pour illustrer des pistes de personnalisation. Ne représentent pas des réalisations du client. Sources originales conservées dans le dossier generated_images de Codex.
+93-campaign.webp : campagne horizontale générée depuis la photographie réelle photo-1.webp ; cuir brun et éclairage de studio illustratifs. Source : exec-af771ffe-6e2f-425f-9346-cc9eabbfa79c.png. Ne pas présenter comme une photographie réelle de la réalisation.

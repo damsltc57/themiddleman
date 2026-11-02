@@ -1,3 +1,4 @@
+@font-face{font-family:'Syne';src:url('./assets/fonts/syne-variable.ttf') format('truetype');font-weight:400 800;font-style:normal;font-display:swap}
 /* Inspiration : PP Editorial New / Tobias sur jacobandco.com.
    Alternatives auto-hébergées sous SIL OFL : Instrument Serif / Libre Caslon Text. */
 @font-face{font-family:'Instrument Serif';src:url('./assets/fonts/instrument-serif-regular.ttf') format('truetype');font-weight:400;font-style:normal;font-display:swap}

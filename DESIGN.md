@@ -119,7 +119,7 @@ Les tokens fixent les rôles, avec des dimensions propres à chaque section. Le 
 
 ## Layout
 
-Le hero place le collier transparent au centre, puis le titre, la description et le lien d’action. Sur mobile, le collier commence sous l’en-tête de 80px.
+Le hero place le collier transparent au centre, puis le titre, la description et le lien d’action. Sur mobile, le collier commence en haut du hero, derrière l’en-tête transparent, sans décalage supérieur de 80px.
 
 La composition après le hero alterne rail photographique, studio noir, atelier sombre, exploration de matière noire, lettre sombre, FAQ indépendante et signature. Les marges de référence sont celles du frontmatter ; les adaptations de section à 1100px et 767px restent celles de la cascade finale.
 
@@ -194,7 +194,7 @@ La FAQ utilise des éléments de divulgation natifs dans sa propre section. La s
 - Don't remplacer le défilement tactile natif de la galerie mobile par une séquence épinglée.
 
 ### Fond du hero : correction des bandes
-Le halo chaud utilise un dégradé elliptique statique de #110e0c au centre à #0a0807 aux bords. hero-background.js calcule une interpolation cosinus et un arrondi stochastique inférieur à un niveau RGB pour éviter les bandes visibles dans les noirs. Canvas décoratif aria-hidden, sans événements ni animation continue, recalculé au redimensionnement (DPR plafonné à 2). Le gradient CSS reste le repli sans JavaScript. Contrôle visuel effectué à 1440 et 390px.
+Le halo chaud utilise un dégradé elliptique statique de #1e1611 au centre à #0a0807 aux bords. hero-background.js calcule une interpolation cosinus et un arrondi stochastique inférieur à un niveau RGB pour éviter les bandes visibles dans les noirs. Canvas décoratif aria-hidden, sans événements ni animation continue, recalculé au redimensionnement (DPR plafonné à 2). Le gradient CSS reste le repli sans JavaScript. Contrôle visuel effectué à 1440 et 390px.
 
 
 ### Navigation plein écran
@@ -271,3 +271,7 @@ Le bloc de choix est remplacé par une scène photographique pleine hauteur : ci
 
 ### Contact — invitation retenue
 La proposition 1 est retenue : « Votre histoire. Une pièce à part. », centrée sans image après la section immersive. Paragraphe court et un seul bouton WhatsApp ivoire. Entrée progressive titre, paragraphe et bouton ; mouvement réduit respecté. Les variantes 2/3, repères et navigation de comparaison sont retirés. Cette section remplace le formulaire et la préparation de brief décrits plus haut. Le numéro WhatsApp reste à confirmer ; le bouton affiche pour l’instant une information locale, sans envoi.
+
+
+### Police du titre du hero
+Le titre « Ce qui vous appartient. » utilise Syne Regular (400), auto-hébergée avec sa licence SIL OFL. Les tailles responsive et les animations existantes sont conservées. Les autres titres restent en Instrument Serif.

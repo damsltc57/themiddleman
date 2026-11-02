@@ -16,7 +16,7 @@ if (hero && context) {
     previous = size;
     canvas.width = width; canvas.height = height;
     const image = context.createImageData(width, height);
-    const center = [17, 14, 12], edge = [10, 8, 7];
+    const center = [30, 22, 17], edge = [10, 8, 7];
     let seed = 21;
     for (let y = 0; y < height; y++) {
       const dy = (y / height - .45) / .78;

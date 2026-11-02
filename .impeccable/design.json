@@ -1,0 +1,318 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-11-02T10:38:34.504994+00:00",
+  "title": "Design System: themiddleman21 — galerie centrale",
+  "extensions": {
+    "colorMeta": {
+      "bg": {
+        "role": "neutral",
+        "displayName": "Noir cinéma",
+        "tonalRamp": [
+          "oklch(15% 0.005 100)",
+          "oklch(26% 0.005 100)",
+          "oklch(38% 0.005 100)",
+          "oklch(49% 0.005 100)",
+          "oklch(61% 0.005 100)",
+          "oklch(72% 0.005 100)",
+          "oklch(84% 0.005 100)",
+          "oklch(95% 0.005 100)"
+        ]
+      },
+      "surface": {
+        "role": "neutral",
+        "displayName": "Noir matière",
+        "tonalRamp": [
+          "oklch(15% 0.008 90)",
+          "oklch(26% 0.008 90)",
+          "oklch(38% 0.008 90)",
+          "oklch(49% 0.008 90)",
+          "oklch(61% 0.008 90)",
+          "oklch(72% 0.008 90)",
+          "oklch(84% 0.008 90)",
+          "oklch(95% 0.008 90)"
+        ]
+      },
+      "ivory": {
+        "role": "neutral",
+        "displayName": "Ivoire",
+        "tonalRamp": [
+          "oklch(15% 0.016 85)",
+          "oklch(26% 0.016 85)",
+          "oklch(38% 0.016 85)",
+          "oklch(49% 0.016 85)",
+          "oklch(61% 0.016 85)",
+          "oklch(72% 0.016 85)",
+          "oklch(84% 0.016 85)",
+          "oklch(95% 0.016 85)"
+        ]
+      },
+      "gold": {
+        "role": "primary",
+        "displayName": "Champagne assourdi",
+        "tonalRamp": [
+          "oklch(15% 0.065 82)",
+          "oklch(26% 0.065 82)",
+          "oklch(38% 0.065 82)",
+          "oklch(49% 0.065 82)",
+          "oklch(61% 0.065 82)",
+          "oklch(72% 0.065 82)",
+          "oklch(84% 0.065 82)",
+          "oklch(95% 0.065 82)"
+        ]
+      },
+      "muted": {
+        "role": "neutral",
+        "displayName": "Gris pierre",
+        "tonalRamp": [
+          "oklch(15% 0.015 90)",
+          "oklch(26% 0.015 90)",
+          "oklch(38% 0.015 90)",
+          "oklch(49% 0.015 90)",
+          "oklch(61% 0.015 90)",
+          "oklch(72% 0.015 90)",
+          "oklch(84% 0.015 90)",
+          "oklch(95% 0.015 90)"
+        ]
+      },
+      "line": {
+        "role": "neutral",
+        "displayName": "Filet brun",
+        "tonalRamp": [
+          "oklch(15% 0.015 90)",
+          "oklch(26% 0.015 90)",
+          "oklch(38% 0.015 90)",
+          "oklch(49% 0.015 90)",
+          "oklch(61% 0.015 90)",
+          "oklch(72% 0.015 90)",
+          "oklch(84% 0.015 90)",
+          "oklch(95% 0.015 90)"
+        ]
+      },
+      "studio": {
+        "role": "neutral",
+        "displayName": "Noir studio",
+        "tonalRamp": [
+          "oklch(15% 0.005 105)",
+          "oklch(26% 0.005 105)",
+          "oklch(38% 0.005 105)",
+          "oklch(49% 0.005 105)",
+          "oklch(61% 0.005 105)",
+          "oklch(72% 0.005 105)",
+          "oklch(84% 0.005 105)",
+          "oklch(95% 0.005 105)"
+        ]
+      },
+      "action-ink": {
+        "role": "neutral",
+        "displayName": "Encre d’action",
+        "tonalRamp": [
+          "oklch(15% 0.012 105)",
+          "oklch(26% 0.012 105)",
+          "oklch(38% 0.012 105)",
+          "oklch(49% 0.012 105)",
+          "oklch(61% 0.012 105)",
+          "oklch(72% 0.012 105)",
+          "oklch(84% 0.012 105)",
+          "oklch(95% 0.012 105)"
+        ]
+      },
+      "action-text": {
+        "role": "neutral",
+        "displayName": "Ivoire d’action",
+        "tonalRamp": [
+          "oklch(15% 0.016 85)",
+          "oklch(26% 0.016 85)",
+          "oklch(38% 0.016 85)",
+          "oklch(49% 0.016 85)",
+          "oklch(61% 0.016 85)",
+          "oklch(72% 0.016 85)",
+          "oklch(84% 0.016 85)",
+          "oklch(95% 0.016 85)"
+        ]
+      }
+    },
+    "typographyMeta": {
+      "display": {
+        "displayName": "Campagne",
+        "purpose": "Titre principal centré sous le collier détouré."
+      },
+      "headline": {
+        "displayName": "Titres éditoriaux",
+        "purpose": "Base des titres de section, avec variantes de composition."
+      },
+      "body": {
+        "displayName": "Lecture",
+        "purpose": "Base globale ; paragraphes souvent plus petits dans cette composition."
+      },
+      "label": {
+        "displayName": "Repères",
+        "purpose": "Petites capitales espacées."
+      }
+    },
+    "shadows": [],
+    "motion": [
+      {
+        "name": "volume-scroll",
+        "value": "scrub: 0.65",
+        "purpose": "Lissage du volume piloté au défilement."
+      },
+      {
+        "name": "manual-rotation",
+        "value": "0.6s / power2.out",
+        "purpose": "Rotation par boutons."
+      },
+      {
+        "name": "manual-explode",
+        "value": "1.05s / power3.inOut",
+        "purpose": "Séparation manuelle."
+      },
+      {
+        "name": "state-transition",
+        "value": "0.25s",
+        "purpose": "Bouton principal, liens et soulignements."
+      },
+      {
+        "name": "atelier-change",
+        "value": "0.65s / power2.out",
+        "purpose": "Changement du média lié à l’étape sélectionnée."
+      },
+      {
+        "name": "gallery-scroll",
+        "value": "scrub: 1; perspective: 1800px",
+        "purpose": "Galerie épinglée dès 768px ; rail natif mobile et mouvement réduit."
+      },
+      {
+        "name": "atelier-mask",
+        "value": "scrub: 0.8",
+        "purpose": "Ouverture du grand cadre au défilement desktop."
+      },
+      {
+        "name": "material-state",
+        "value": "1.5s cubic-bezier(.16,1,.3,1)",
+        "purpose": "Cadrage métaux/pierres : object-position 70%→30%, scale 1.15→1.5."
+      },
+      {
+        "name": "footer-mask",
+        "value": "1.3s / expo.out",
+        "purpose": "Révélation unique de la signature par masque et translation."
+      },
+      {
+        "name": "hero-entry",
+        "value": "1.8s / power2.out; y: -65px→0; rotation: -3deg→0",
+        "purpose": "Entrée unique après décodage du collier, suivie du texte ; aucune animation en mouvement réduit."
+      }
+    ],
+    "breakpoints": [
+      {
+        "name": "small-base",
+        "value": "360px"
+      },
+      {
+        "name": "mobile",
+        "value": "767px"
+      },
+      {
+        "name": "tablet",
+        "value": "1100px"
+      },
+      {
+        "name": "wide-base",
+        "value": "1600px"
+      }
+    ]
+  },
+  "components": [
+    {
+      "name": "Bouton principal",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "Préparer le brief local.",
+      "html": "<button class=\"ds-primary\">Préparer mon projet <svg width=\"18\" height=\"18\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.2\" aria-hidden=\"true\"><path d=\"M4 12h15m-6-6 6 6-6 6\"/></svg></button>",
+      "css": ".ds-primary{display:inline-flex;align-items:center;justify-content:space-between;gap:34px;min-height:52px;padding:15px 22px;border:1px solid transparent;border-radius:0;background:#eee8db;color:#17130e;font:400 11px Libre Caslon Text,Georgia,serif;cursor:pointer;transition:background .25s,transform .25s}.ds-primary:hover{background:#d0bc98;transform:none}.ds-primary:focus-visible{outline:2px solid var(--gold,#bda680);outline-offset:6px}@media(prefers-reduced-motion:reduce){.ds-primary{transition:none;transform:none}}"
+    },
+    {
+      "name": "Lien d’action",
+      "kind": "button",
+      "refersTo": "text-link",
+      "description": "Une action discrète accompagnée d’une flèche.",
+      "html": "<a class=\"ds-link\" href=\"#projet\">Parlons de votre idée <svg width=\"18\" height=\"18\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.2\" aria-hidden=\"true\"><path d=\"M4 12h15m-6-6 6 6-6 6\"/></svg></a>",
+      "css": ".ds-link{display:inline-flex;align-items:center;gap:27px;padding:11px 0;border-bottom:1px solid #81745e;color:var(--ivory,#eee8db);font:400 11px Libre Caslon Text,Georgia,serif;text-decoration:none;transition:gap .25s}.ds-link:hover{gap:35px}.ds-link:focus-visible{outline:2px solid var(--gold,#bda680);outline-offset:6px}@media(prefers-reduced-motion:reduce){.ds-link{transition:none;transform:none}}"
+    },
+    {
+      "name": "Champ de projet",
+      "kind": "input",
+      "refersTo": "input",
+      "description": "Champ transparent avec état d’erreur accessible.",
+      "html": "<label class=\"ds-label\" for=\"ds-name\">Votre prénom</label><input class=\"ds-input\" id=\"ds-name\" placeholder=\"Prénom\" autocomplete=\"given-name\">",
+      "css": ".ds-label{display:block;color:#eee8db;font:12px Libre Caslon Text,Georgia,serif;margin-bottom:10px}.ds-input{border:0;border-bottom:1px solid #655845;background:transparent;color:#eee8db;padding:12px 0 15px;width:100%;min-height:45px;font:13px/1.6 Libre Caslon Text,Georgia,serif;transition:border-color .2s}.ds-input::placeholder{color:#b8ae9d;opacity:1}.ds-input:hover,.ds-input:focus{border-bottom-color:#bda680}.ds-input[aria-invalid=true]{border-bottom-color:#f2ac90}.ds-input:focus-visible{outline:2px solid #bda680;outline-offset:6px}@media(prefers-reduced-motion:reduce){.ds-input{transition:none;transform:none}}"
+    },
+    {
+      "name": "Choix de budget",
+      "kind": "chip",
+      "refersTo": "budget-option",
+      "description": "Sélection rectangulaire ; le rendu actif est exposé par aria-pressed.",
+      "html": "<button class=\"ds-budget\" aria-pressed=\"false\">500–1 500 €</button> <button class=\"ds-budget\" aria-pressed=\"true\">À définir</button>",
+      "css": ".ds-budget{background:transparent;border:1px solid #655845;border-radius:0;color:#eee8db;font:11px Libre Caslon Text,Georgia,serif;min-height:40px;padding:8px 12px;cursor:pointer}.ds-budget[aria-pressed=true]{border-color:#eee8db;background:#eee8db;color:#17130e}.ds-budget:hover{border-color:var(--gold,#bda680)}.ds-budget:focus-visible{outline:2px solid var(--gold,#bda680);outline-offset:6px}@media(prefers-reduced-motion:reduce){.ds-budget{transition:none;transform:none}}"
+    },
+    {
+      "name": "Navigation",
+      "kind": "nav",
+      "refersTo": "text-link",
+      "description": "Menu de sections sur fond noir, ouvert depuis l’en-tête sur ordinateur et mobile.",
+      "html": "<nav class=\"ds-nav\" aria-label=\"Sections\"><a href=\"#piece\">La pièce</a><a href=\"#volume\">Le détail</a><a href=\"#sur-mesure\">Le sur-mesure</a></nav>",
+      "css": ".ds-nav{display:flex;flex-direction:column;gap:6px;width:260px;padding:25px 30px;background:#11100e;border:1px solid #433a2c}.ds-nav a{padding:12px 0;color:var(--ivory,#eee8db);font:400 14px Libre Caslon Text,Georgia,serif;text-decoration:none}.ds-nav a:after{content:\"\";display:block;height:1px;background:currentColor;transform:scaleX(0);transform-origin:left;transition:transform .25s}.ds-nav a:hover:after{transform:scaleX(1)}.ds-nav a:focus-visible{outline:2px solid var(--gold,#bda680);outline-offset:6px}@media(prefers-reduced-motion:reduce){.ds-nav a{transition:none;transform:none}}"
+    },
+    {
+      "name": "Étape d’atelier",
+      "kind": "custom",
+      "refersTo": "process-step",
+      "description": "Déclencheur de l’accordéon exclusif ; la page met aussi à jour le média associé.",
+      "html": "<div class=\"ds-atelier\"><button class=\"ds-step\" aria-expanded=\"true\" aria-controls=\"ds-panel\"><span>01</span><span class=\"ds-title\">Raconter.</span><span class=\"ds-sign\">−</span></button><div id=\"ds-panel\" class=\"ds-panel\">Une origine, des initiales, une envie. Partagez ce qui compte pour vous.</div></div>",
+      "css": ".ds-atelier{background:#11100e;color:var(--ink,#eee8db);border-top:1px solid #433a2c}.ds-step{display:flex;align-items:center;gap:22px;width:100%;padding:25px 0;border:0;border-radius:0;background:transparent;text-align:left;color:#bbb3a5;font:11px Libre Caslon Text,Georgia,serif;cursor:pointer}.ds-title{font:400 40px/1.1 Instrument Serif,Georgia,serif;letter-spacing:-.02em}.ds-sign{margin-left:auto;font-size:20px}.ds-step[aria-expanded=true],.ds-step:hover{color:#eee8db}.ds-step:focus-visible{outline:2px solid var(--gold,#bda680);outline-offset:6px}.ds-panel{padding:0 0 20px;color:#bbb3a5;font:14px/1.85 Libre Caslon Text,Georgia,serif}"
+    },
+    {
+      "name": "Panneau des matières",
+      "kind": "card",
+      "refersTo": "material-panel",
+      "description": "Panneau latéral sur fond noir, associé au cadrage de la macro.",
+      "html": "<article class=\"ds-material\"><div class=\"ds-tabs\" role=\"tablist\" aria-label=\"Matières\"><button role=\"tab\" aria-selected=\"true\">Les métaux</button><button role=\"tab\" aria-selected=\"false\">Les pierres</button></div><h3>Chaud. Clair. Rosé.</h3><p>Des possibilités à explorer selon votre projet.</p></article>",
+      "css": ".ds-material{background:#090807;color:#eee8db;padding:0;max-width:490px}.ds-tabs{display:flex;gap:35px;border-bottom:1px solid #595348;margin-bottom:32px}.ds-tabs button{background:none;border:0;border-bottom:1px solid transparent;color:#b9b3a6;padding:16px 0;min-height:58px;font:14px Libre Caslon Text,Georgia,serif;cursor:pointer}.ds-tabs button[aria-selected=true]{color:#eee8db;border-bottom-color:#bda680}.ds-tabs button:hover{color:#eee8db}.ds-tabs button:focus-visible{outline:2px solid var(--gold,#bda680);outline-offset:6px}.ds-material h3{font:400 40px/1.1 Instrument Serif,Georgia,serif;margin:0 0 15px}.ds-material p{font:15px/1.85 Libre Caslon Text,Georgia,serif;color:#c0baac;margin:0}"
+    }
+  ],
+  "narrative": {
+    "northStar": "Galerie centrale",
+    "overview": "Une présence photographique ample et sombre, une lumière champagne et de grands caractères littéraires donnent à la pièce une place personnelle. Le rythme associe collier central détouré, observation du volume et respirations éditoriales sur des noirs chauds. La direction reprend l’image 3 approuvée (`../hero-proposals/03-galerie-centrale.png`).\n\nLe mouvement spectaculaire organise la découverte : traversée de galerie, décomposition du volume, ouverture du cadre et révélation de la signature. Les commandes restent explicites et accessibles ; les légendes distinguent photographie originale, mises en scène et interprétation 3D.",
+    "keyCharacteristics": [
+      "Noir chaud et champagne assourdi.",
+      "Instrument Serif expressif, Libre Caslon Text discret.",
+      "Grands cadres droits, filets fins et séquences animées amples.",
+      "Commandes utilisables au clavier et mouvement réduit respecté."
+    ],
+    "rules": [
+      {
+        "name": "The Light Rule",
+        "body": "Le champagne accompagne la pièce et les états interactifs ; les grandes surfaces restent neutres.",
+        "section": "colors"
+      },
+      {
+        "name": "The Italic Rule",
+        "body": "L’italique souligne une expression au sein du titre ; il garde le même poids léger et ne devient pas un second style de corps.",
+        "section": "typography"
+      }
+    ],
+    "dos": [
+      "Do conserver les légendes distinguant photographie originale, campagne et interprétation 3D.",
+      "Do garder les commandes lisibles sur des surfaces stables.",
+      "Do préserver les états clavier et la préférence de mouvement réduit.",
+      "Do utiliser la lumière, l’espace et le mouvement pour donner de la présence à la pièce.",
+      "Do conserver le collier détouré sur fond noir et son entrée unique, sans vidéo dans le hero."
+    ],
+    "donts": [
+      "Don't ajouter des cartes arrondies et des ombres flottantes à cette grammaire plane.",
+      "Don't substituer l’ancienne famille Bodoni à Instrument Serif dans la version cinéma.",
+      "Don't rendre le défilement animé indispensable à la découverte du volume.",
+      "Don't présenter les nuances de la scène comme des caractéristiques produit confirmées.",
+      "Don't remplacer le défilement tactile natif de la galerie mobile par une séquence épinglée."
+    ]
+  }
+}

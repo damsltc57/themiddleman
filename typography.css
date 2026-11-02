@@ -1,0 +1,22 @@
+/* Inspiration : PP Editorial New / Tobias sur jacobandco.com.
+   Alternatives auto-hébergées sous SIL OFL : Instrument Serif / Libre Caslon Text. */
+@font-face{font-family:'Instrument Serif';src:url('./assets/fonts/instrument-serif-regular.ttf') format('truetype');font-weight:400;font-style:normal;font-display:swap}
+@font-face{font-family:'Instrument Serif';src:url('./assets/fonts/instrument-serif-italic.ttf') format('truetype');font-weight:400;font-style:italic;font-display:swap}
+@font-face{font-family:'Libre Caslon Text';src:url('./assets/fonts/libre-caslon-text.ttf') format('truetype');font-weight:400;font-style:normal;font-display:swap}
+:root{--serif:'Instrument Serif',Georgia,serif;--sans:'Libre Caslon Text',Georgia,serif}
+body{font-weight:400;-webkit-font-smoothing:antialiased}
+h1,h2,h3,.wordmark,.footer-signature{font-family:var(--serif);font-weight:400;letter-spacing:-.015em}
+.hero-copy h1{font-size:clamp(76px,7.6vw,118px);line-height:.98;letter-spacing:.015em;text-transform:uppercase}
+.hero-copy h1 em{font-style:normal;font-size:1em}
+.story-title h2{font-size:clamp(72px,7.2vw,108px);line-height:1.02}
+.volume-copy h2{font-size:clamp(65px,6vw,90px);line-height:1.02}
+.atelier-copy h2{font-size:clamp(49px,4.2vw,65px);line-height:1.12}
+.material-scene-heading h2{font-size:clamp(66px,6.4vw,96px);line-height:1.03}
+.concierge-copy h2{font-size:clamp(66px,6vw,90px);line-height:1.05}
+.nav a,.header-project,.text-link,.hero-copy>.text-link,.button,.prepare-button,.material-tabs button,.footer-bottom nav,.budget-options button{font-weight:400;font-size:11px;letter-spacing:.065em}
+.nav a,.header-project,.text-link,.hero-copy>.text-link,.prepare-button{text-transform:uppercase}
+.hero-copy>p.hero-description,.story-title p,.atelier-copy>p,.material-scene-heading>p,.concierge-copy>p{line-height:1.95}
+.process-step h3{font-size:39px}.material-panel h3{font-size:39px}
+.footer-signature{letter-spacing:0;font-size:18vw;line-height:1.05}.wordmark{font-size:36px;letter-spacing:0}
+@media(max-width:1100px){.nav{gap:22px}.header-project{gap:14px}.hero-copy h1{font-size:8vw}}
+@media(max-width:767px){.hero-copy h1{font-size:clamp(48px,11.8vw,82px);line-height:1.05}.hero-copy{max-width:calc(100% - 48px)}.story-title h2{font-size:66px;line-height:1.03}.volume-copy h2{font-size:55px;line-height:1.04}.atelier-copy h2{font-size:50px;line-height:1.12}.material-scene-heading h2{font-size:53px;line-height:1.08}.concierge-copy h2{font-size:66px}.concierge-image>figcaption{font-size:49px;line-height:1.05}.process-step h3{font-size:36px}.material-panel h3{font-size:35px}.footer-signature{font-size:17.6vw}.text-link,.hero-copy>.text-link{font-size:10px;letter-spacing:.04em;gap:16px}.header .wordmark{font-size:32px}.nav a{font-size:14px}.budget-options{gap:6px}.budget-options button{font-size:10px;letter-spacing:0;padding-inline:8px}.source-photo span{font-size:10px}.form-pair{gap:15px}}

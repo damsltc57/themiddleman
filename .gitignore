@@ -147,3 +147,11 @@ vite.config.ts.timestamp-*
 
 # Turbo Repo
 .turbo
+
+# Local previews and working renders
+.DS_Store
+captures/
+.impeccable/review/
+*.blend1
+*.blend2
+source/blender/necklace-studio.png

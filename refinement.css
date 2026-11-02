@@ -1,0 +1,101 @@
+/* Impeccable refinement: editorial hierarchy, actual piece, readable controls. */
+:root{--reading:15px;--caption:12px;--quiet:#b9b5aa;--rule:#48453c}
+html{scrollbar-color:#716957 #10100e}
+::selection{background:#c5ab7b;color:#10100e}
+input,textarea{caret-color:var(--gold)}
+a{text-underline-offset:.3em}
+h1,h2,h3{text-wrap:balance}
+/* Gold is reserved for the hero and interaction, rather than every title. */
+.story-title h2 em,.volume-copy h2 em,.material-scene-heading h2 em,.concierge-copy h2 em{font-style:normal;color:inherit}
+.hero-copy h1{font-size:clamp(72px,6.65vw,96px);letter-spacing:.005em}
+.story-title h2{font-size:clamp(64px,6.65vw,96px);line-height:1.05}
+.hero-copy>p.hero-description,.story-title p,.atelier-copy>p,.material-scene-heading>p,.concierge-copy>p{font-size:var(--reading);line-height:1.75}
+.hero-copy>p.hero-description{max-width:390px;color:#e4dfd5}
+.hero:after{background:linear-gradient(90deg,#080808a6,transparent 70%),linear-gradient(180deg,#08080899,transparent 20%,transparent 80%,#08080880)}
+.header .nav a,.header-project{font-size:12px;letter-spacing:.055em}
+.text-link,.hero-copy>.text-link{font-size:12px;letter-spacing:.045em;min-height:44px}
+.hero-foot button{border:0;border-radius:0;background:#10100edb;min-height:44px;min-width:84px;font-size:12px}
+.hero-foot .discover-link{font-size:12px;min-height:44px}
+.story-title{align-items:center;margin-bottom:64px}
+.story-title>div{width:31%;max-width:370px}
+.story-spread{grid-template-columns:1fr 1fr;gap:24px;padding-inline:56px;max-width:1600px;margin-inline:auto}
+.story-spread img{height:680px}
+.story-object img{object-position:center 55%}
+.story-worn img{object-position:center 48%}
+.story-spread figcaption{position:static;padding:16px 0 0;font-size:var(--caption);color:var(--quiet);line-height:1.5}
+.story-caption{margin-top:40px}
+.story-caption>p{font-size:14px;line-height:1.8}
+.source-photo span{font-size:12px;line-height:1.5}
+.source-photo img{width:56px;height:68px}
+.volume-section,.concierge{background:#151511}
+.volume-copy>p{font-size:14px;line-height:1.8;color:var(--quiet)}
+.volume-chapter{font-size:12px}
+.volume-controls{gap:20px}
+.volume-note{font-size:11px;color:var(--quiet)}
+.rotation-control button,.finish{min-width:44px;min-height:44px}
+.text-button{font-size:12px;min-height:44px}
+.atelier-copy{padding-top:85px;padding-bottom:85px}
+.process-accordion article>div>p{font-size:14px;line-height:1.8}
+.process-step h3{font-size:36px}
+.atelier-media>span{font-size:12px}
+.material-panel{padding:10px 32px 32px;width:430px}
+.material-panel p{font-size:14px;line-height:1.8}
+.material-panel .material-note{font-size:12px}
+.material-panel .material-tabs button{font-size:13px}
+.material-scene{min-height:1020px}
+.material-credit{font-size:12px}
+.concierge-copy{padding-top:85px}
+.concierge label,.concierge legend{font-size:14px}
+.concierge input,.concierge select,.concierge textarea{font-size:16px;line-height:1.6}
+.concierge input::placeholder,.concierge textarea::placeholder{color:#b0aa9c;opacity:1}
+.concierge .budget-note,.concierge .privacy-note{font-size:12px;line-height:1.75;color:var(--quiet)}
+.budget-options{gap:8px;flex-wrap:wrap}
+.budget-options button{font-size:12px;min-height:44px;padding:9px 12px}
+.budget-options button.active{background:var(--paper);color:var(--ink);border-color:var(--paper)}
+.prepare-button{min-height:56px;font-size:12px}
+.concierge-questions summary,.concierge-questions details>p{font-size:14px;line-height:1.7}
+.concierge-image>figcaption em{color:inherit}
+.footer-invitation>p{font-size:14px}
+.footer-signature{font-size:clamp(64px,12vw,180px);padding-block:25px;letter-spacing:-.02em}
+.footer-bottom,.footer-bottom nav{font-size:11px;line-height:1.7}
+@media(max-width:1100px){
+.story-spread{padding-inline:36px;gap:18px}.story-spread img{height:560px}
+.volume-controls{left:30%;right:5%}.material-panel{width:400px}
+}
+@media(max-width:767px){
+:root{--reading:14px}
+.hero-copy h1{font-size:clamp(46px,11.5vw,80px);line-height:1.06}
+.hero-copy>p.hero-description{margin-top:24px;line-height:1.7}
+.hero-copy>.text-link{font-size:11px;margin-top:0}
+.hero-image{inset:380px 0 auto;height:360px;min-height:0;max-height:none}
+.hero{min-height:840px;max-height:960px}
+.hero:after{background:linear-gradient(180deg,transparent 70%,#0b0b0a80 90%,#0b0b0a)}
+.story{padding-top:64px}
+.story-title h2{font-size:60px}.story-title>div{width:auto;max-width:380px}.story-title{margin-bottom:32px}
+.story-spread{padding-inline:22px;gap:32px;grid-template-columns:1fr}
+.story-spread img{height:auto;aspect-ratio:4/5;object-fit:cover}
+.story-spread .story-worn{width:78%;margin-left:auto}
+.story-spread .story-worn img{aspect-ratio:4/5}
+.story-spread figcaption{padding-top:12px;font-size:11px}
+.story-caption>p{font-size:14px}.source-photo span{font-size:12px}
+.volume-copy h2{font-size:52px}.volume-copy>p{font-size:13px}
+.volume-controls{left:22px;right:22px;gap:10px;flex-wrap:wrap;bottom:82px;justify-content:space-between}
+.volume-controls .finish-control{gap:0}.volume-controls .finish-label{display:none}
+.volume-controls .text-button{width:100%;justify-content:flex-end;font-size:12px}
+.volume-note{font-size:10px;bottom:20px}
+.jewel-stage{top:300px;height:calc(100% - 510px);min-height:250px}
+.atelier-copy{padding:60px 22px 45px}.atelier-copy h2{font-size:48px}
+.process-accordion article>div>p{padding-left:0;font-size:14px}
+.atelier-media{height:390px}.atelier-media>span{font-size:11px}
+.material-scene{min-height:0;padding-bottom:65px}.material-scene-heading h2{font-size:50px}
+.material-panel{width:calc(100% - 44px);margin:280px 22px 24px;padding:8px 24px 28px}
+.material-panel .text-link{font-size:11px}.material-credit{font-size:11px}
+.concierge-copy{padding:60px 22px}.concierge-copy h2{font-size:60px}
+.concierge-image{height:430px}.concierge-image>figcaption{font-size:42px}
+.concierge .form-pair{grid-template-columns:1fr;gap:0}
+.budget-options{display:grid;grid-template-columns:1fr 1fr}.budget-options button{font-size:12px;letter-spacing:0}
+.footer-signature{font-size:17vw;padding-block:15px}.footer-bottom nav{gap:18px}
+}
+@media(prefers-reduced-motion:reduce){.volume-copy .volume-hint{display:none}}
+/* Keep text readable over the brightest facets of the mobile macro. */
+@media(max-width:767px){.material-scene:after{height:400px;background:linear-gradient(#090a09f2,#090a09cf 60%,transparent)}.material-scene-heading>p{color:#e1dcd1}}
